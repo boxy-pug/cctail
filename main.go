@@ -47,7 +47,7 @@ func (tc *tailCommand) openFile() {
 	for _, filepath := range tc.filePaths {
 		file, err := os.Open(filepath)
 		if err != nil {
-			fmt.Printf("error opening filename %v as file: %v", filepath, err)
+			fmt.Printf("tail: %v\n", err)
 			os.Exit(1)
 		}
 		tc.tailFiles = append(tc.tailFiles, tailFile{filePointer: file})
